@@ -83,6 +83,16 @@ function applyAdding() {
 
 //For Login
 function checkIfUser() {
+  if (loginEmail.value.trim() === "" || loginPass.value.trim() === "") {
+    Swal.fire({
+      icon: "warning",
+      title: "All Fields Are Required",
+      theme: "dark",
+      iconColor: "orange",
+      confirmButtonColor: "orange",
+    });
+    return; // نوقف هنا
+  }
   var trueUser = false;
   var existsEmail = false;
   for (var i = 0; i < allUsers.length; i++) {
@@ -98,22 +108,12 @@ function checkIfUser() {
         console.log(userName);
         window.location.pathname = "/home.html";
         console.log(window.location.pathname);
-
         clearInputs();
-        break;
+        return;
       }
     }
   }
-  if (loginEmail.value == "" || loginPass.value == "") {
-    Swal.fire({
-      icon: "warning",
-      title: "All Fields Are Required",
-
-      theme: "dark",
-      iconColor: "orange",
-      confirmButtonColor: "orange",
-    });
-  } else if (!existsEmail) {
+  if (!existsEmail) {
     Swal.fire({
       icon: "warning",
       title: "This Email Doesn't Exist",

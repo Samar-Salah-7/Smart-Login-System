@@ -59,7 +59,7 @@ function addUser() {
 }
 
 function applyAdding() {
-  console.log(window.location.pathname);
+  // console.log(window.location.pathname);
 
   var user = {
     name: signName.value,
@@ -91,23 +91,20 @@ function checkIfUser() {
       iconColor: "orange",
       confirmButtonColor: "orange",
     });
-    return; // نوقف هنا
+    return;
   }
   var trueUser = false;
   var existsEmail = false;
   for (var i = 0; i < allUsers.length; i++) {
-    console.log("skks");
-    console.log(loginEmail.value);
-
     if (allUsers[i].email === loginEmail.value.trim().toLowerCase()) {
       existsEmail = true;
       if (allUsers[i].pass === loginPass.value) {
         trueUser = true;
         var userName = allUsers[i].name;
         localStorage.setItem("currentUser", userName);
-        console.log(userName);
-        window.location.pathname = "/home.html";
-        console.log(window.location.pathname);
+        // console.log(userName);
+        window.location.href = "home.html";
+        // console.log(window.location.pathname); // عمل مشكلة مع ال live Demo
         clearInputs();
         return;
       }

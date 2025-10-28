@@ -1,0 +1,101 @@
+:root {
+  --border-input: #171717;
+  --primary-bg-color: #7511a0;
+  --title-card: #a23ace;
+  --secondary-bg-color: #ff9a9e;
+  --primary-txt-color: #fff;
+  --label-color: #888888;
+  --primary-bg-input: #222222;
+  --primary-bg-card: #1a1a1a;
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+::selection {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-txt-color);
+}
+body {
+  color: var(--primary-txt-color);
+  margin: 0px;
+  padding: 0px;
+  font-family: "Titillium Web", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    var(--secondary-bg-color),
+    var(--primary-bg-color)
+  );
+}
+
+.home h2 {
+  color: var(--primary-txt-color);
+  font-family: "Poppins", sans-serif;
+}
+.nav-item button {
+  background: var(--secondary-bg-color);
+}
+
+/********************** Form *************************/
+
+.elements .card {
+  background: var(--primary-bg-card);
+}
+.title-form {
+  font-family: "Poppins", sans-serif;
+  /* font-size: 25px; */
+  line-height: 30px;
+  /* margin-inline: 1px; */
+  font-weight: 500;
+  color: var(--title-card);
+}
+.form-control,
+.form-control:focus {
+  border: 1px solid var(--title-card);
+  box-shadow: none;
+  color: var(--primary-txt-color);
+  background-color: var(--primary-bg-input);
+  border-color: var(--border-input);
+}
+.form-control.is-valid,
+.form-control.is-valid:focus {
+  border: 1px solid rgb(6, 91, 6);
+
+  box-shadow: none;
+}
+
+.form-control.is-invalid,
+.form-control.is-invalid:focus {
+  border: 1px solid red;
+  box-shadow: none;
+}
+
+.form-floating label {
+  color: var(--label-color);
+}
+.form-footer {
+  color: var(--label-color);
+}
+.form-footer a {
+  color: var(--title-card);
+  text-decoration: none;
+}
+.form-footer a:hover {
+  color: var(--primary-bg-color);
+  text-decoration: underline;
+}
+.login-btn {
+  background-color: var(--title-card);
+  color: var(--primary-txt-color);
+}
+.login-btn:hover {
+  background-color: #9324c2;
+  color: var(--primary-body-color);
+}
+
+@media screen and (max-width: 991.98px) {
+  .container .row .col,
+  .container .row .col .card {
+    min-width: 100%;
+  }
+}

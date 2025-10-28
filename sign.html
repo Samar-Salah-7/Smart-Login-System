@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smart Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="elements">
+      <div class="container">
+        <div
+          class="row row-cols-sm-1 gy-5 vh-100 align-content-center"
+          id="productData"
+        >
+          <div class="col py-5">
+            <div class="inner">
+              <div class="card p-4 shadow-lg w-50 mx-auto">
+                <div class="card-title mb-3">
+                  <h2 class="title-form h1">Sign Up</h2>
+                </div>
+                <div class="form-div">
+                  <div class="form-floating mb-4">
+                    <input
+                      oninput="isValid(userRegex.nameRegex,this)"
+                      type="text"
+                      class="form-control"
+                      id="signName"
+                      placeholder="Enter Your Name"
+                    />
+
+                    <div id="feedbackName" class="invalid-feedback">
+                      <span> Must be at least 3 letters </span>
+                    </div>
+                    <label for="signName">Your Name</label>
+                  </div>
+                  <div class="form-floating mb-4">
+                    <input
+                      oninput="isValid(userRegex.emailRegex,this)"
+                      type="email"
+                      class="form-control"
+                      id="signEmail"
+                      placeholder="Enter Your email"
+                    />
+
+                    <div id="feedbackEmail" class="invalid-feedback">
+                      <span> Maust be Valid Email </span>
+                    </div>
+                    <label for="signEmail">Email</label>
+                  </div>
+
+                  <div class="form-floating mb-4">
+                    <input
+                      oninput="isValid(userRegex.passRegex,this)"
+                      type="password"
+                      class="form-control"
+                      id="signPass"
+                      placeholder="Your Passsword"
+                    />
+                    <div id="feedbackPass" class="invalid-feedback">
+                      <span>
+                        Must contain Capital ,small Letters & numbers
+                      </span>
+                    </div>
+                    <label for="signPass">Passsword</label>
+                  </div>
+
+                  <div class="form-footer d-flex justify-content-between">
+                    <button
+                      type="submit"
+                      onclick="addUser()"
+                      class="btn login-btn mb-4"
+                      id="signBtn"
+                    >
+                      Sign Up
+                    </button>
+                    <div>
+                      <span>You have an account? </span>
+                      <span><a href="index.html">Signin</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
